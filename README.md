@@ -115,7 +115,7 @@ docker exec -it <KSQL_container_id> /bin/bash
  ```bash
 ksql http://ksql-server:8090
 ```
-- To create a new stream associated with <kafka-topic>:
+- To create a new stream associated with *'kafka-topic'*:
 ```bash
 CREATE STREAM <stream_name> (
     time VARCHAR,
