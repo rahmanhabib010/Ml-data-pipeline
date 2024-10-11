@@ -115,14 +115,25 @@ docker exec -it <KSQL_container_id> /bin/bash
  ```bash
 ksql http://ksql-server:8090
 ```
-- To check Existing Streams/Tables:
+- To create a new stream associated with <kafka-topic>:
 ```bash
-SHOW STREAMS;
-SHOW TABLES;
+CREATE STREAM <stream_name> (
+    time VARCHAR,
+    value DOUBLE,
+    label VARCHAR
+) WITH (
+    KAFKA_TOPIC=<'kafka-topic'>,
+    VALUE_FORMAT='JSON'
+);
+```
+- To check Existing Streams:
+```bash
+LIST STREAMS;
 ```
 - To Query the Stream:
 ```bash
-SELECT * FROM <stream_name> EMIT CHANGES;
+SELECT * FROM <stream_name>;
+SELECT * FROM <stream_name> LIMIT 10;
 ```
 - To exit KSQL CLI:
 ```bash
