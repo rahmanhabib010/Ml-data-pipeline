@@ -42,7 +42,7 @@ python gen_sql.py
 
 ```bash
 cd docker
-docker compose -f docker-compose.yaml up -d
+sudo docker compose -f docker-compose.yaml up -d
 ```
 This will start all the required services:
 
@@ -56,7 +56,7 @@ This will start all the required services:
 - Ensure all services are up and running:
 
 ```bash
-docker ps
+sudo docker ps -a
 ```
 5. **Run producer and consumer script**
 - Navigate to the producer directory and run *producer.py* file to read data from json file as well as publish it to an input Kafka topic:
@@ -76,13 +76,13 @@ python consumer.py
 - To check ip of the influxdB container:
 
 ```bash
-docker inspect <container_name> | grep "IPAddress"
+sudo docker inspect <container_name> | grep "IPAddress"
 ```
 - To access influxdB container:
  ```bash
-docker exec -it <influxDB_container_name> /bin/bash
+sudo docker exec -it <influxDB_container_name> /bin/bash
 or
-docker exec -it <influxDB_container_id> /bin/bash
+sudo docker exec -it <influxDB_container_id> /bin/bash
 ```
 - Before running "influx" CLI command from the containier:
  ```bash
@@ -107,9 +107,9 @@ python run_query.py
 
 - To access KSQL container:
  ```bash
-docker exec -it <KSQL_container_name> /bin/bash
+sudo docker exec -it <KSQL_container_name> /bin/bash
 or
-docker exec -it <KSQL_container_id> /bin/bash
+sudo docker exec -it <KSQL_container_id> /bin/bash
 ```
 - To start KSQL CLI:
  ```bash
@@ -151,7 +151,7 @@ EXIT;
 - To stop and remove all running containers:
 ```bash
 cd docker
-docker compose -f docker-compose.yaml down -d
+sudo docker compose -f docker-compose.yaml down
 ```
 
 ## Acknowledgments

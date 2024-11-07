@@ -18,7 +18,7 @@ write_api = client.write_api(write_options=SYNCHRONOUS)
 
 # Kafka Consumer configuration
 consumer_conf = {
-    'bootstrap.servers': 'localhost:29094',
+    'bootstrap.servers': 'localhost:29092',
     'group.id': 'test-group',
     'auto.offset.reset': 'earliest',
     'enable.auto.commit': True

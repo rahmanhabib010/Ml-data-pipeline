@@ -44,7 +44,7 @@ def produce(data, producer_type):
     time_driven = False
     if producer_type == "time":
         time_driven = True
-    conf = {'bootstrap.servers': 'localhost:29094'}
+    conf = {'bootstrap.servers': 'localhost:29092'}
     p = Producer(**conf)
     
     for item in data:
